@@ -47,11 +47,10 @@ def Signup():
 
 @st.cache_data(ttl=600)
 def test():
-    newdata = "this is string"
-    nwdata = json.loads(newdata)
+    values = json.loads(st.text_area("Values:"))
     data = "https://drive.google.com/file/d/1lsxPqJAZyrr_T1gtiamgwrKDIHg4rO6Z/view?usp=drive_link"
     with open(data, "w") as file:
-        file.write(json.dumps(nwdata))
+        file.write(json.dumps(values))
     
 
 def Login():
