@@ -14,7 +14,7 @@ def chatting():
 
 def dashboard():
 
-   with st.sidebar():
+   with st.sidebar:
       selected = option_menu(None, ["Create Reminder", "View Reminders", "Chat", "Logout"], icons = ["📝", "📋", "💬", "🔓"] )
 
    if selected == "Create Reminder":
