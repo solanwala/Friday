@@ -47,18 +47,16 @@ def Signup():
 
 @st.cache_data(ttl=600)
 def test():
-    data = loadfile()
-    allrem = data["reminders"]
-    for rem in allrem:
-        st.write(rem)
     newdata = {
         "message": "this is reminder",
             "date":"at this date",
             "time":"this is time"
     }
-    allrem.append(newdata)
-    with open("database/data.json", "w") as file:
-        json.dump(data, file, indent=4)
+    nwdata = json.loads(newdata)
+    data = "https://drive.google.com/file/d/1lsxPqJAZyrr_T1gtiamgwrKDIHg4rO6Z/view?usp=drive_link"
+    with open(data, "w") as file:
+        file.write(json.dumps(nwdata))
+    
 
 def Login():
     username = st.text_input("username")
