@@ -47,10 +47,15 @@ def Signup():
 
 
 def test():
-    values = json.loads(st.text_area("Values:"))
+    values = {
+        "one": "jslkjgs",
+        "two": "ssgs"    }
     data = "https://drive.google.com/file/d/1lsxPqJAZyrr_T1gtiamgwrKDIHg4rO6Z/view?usp=drive_link"
+    with open(data) as f:
+        dtta = json.load(f)
+    dtta.append(values)
     with open(data, "w") as file:
-        file.write(json.dumps(values))
+        file.write(json.dumps(dtta,file, indent=4))
     
 
 def Login():
