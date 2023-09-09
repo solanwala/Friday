@@ -3,11 +3,11 @@ import json
 import pandas as pd
 from streamlit_option_menu import option_menu
 from home import dashboard
-from pymongo.mongo_client import MongoClient
+from pymongo
 
 uri = st.secrets["MONGO_CONNECTION_STRING"]
 
-client = MongoClient(uri, ssl=False, tls=False)
+client = pymongo.MongoClient(uri, ssl=False, tls=False)
 
 db = client["myapp"]
 
