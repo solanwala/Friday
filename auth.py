@@ -45,7 +45,7 @@ def Signup():
             else:
                 "Password do not match"
 
-@st.cache_data(ttl=600)
+
 def test():
     values = json.loads(st.text_area("Values:"))
     data = "https://drive.google.com/file/d/1lsxPqJAZyrr_T1gtiamgwrKDIHg4rO6Z/view?usp=drive_link"
