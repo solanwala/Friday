@@ -7,7 +7,7 @@ from pymongo.mongo_client import MongoClient
 
 uri = st.secrets["MONGO_CONNECTION_STRING"]
 
-client = MongoClient(uri, ssl=False)
+client = MongoClient(uri, ssl=False, tls=False)
 
 db = client["myapp"]
 
