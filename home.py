@@ -3,8 +3,19 @@ import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
 
+def create_rem():
+   st.title("Create New Reminder")
+
+def view_rem():
+   st.title("All Reminders")
+
+def chatting():
+   st.title("Chatbot")
+
 def dashboard():
-   selected = option_menu(None, ["Create Reminder", "View Reminders", "Chat", "Logout"], icons = ["📝", "📋", "💬", "🔓"] )
+
+   with st.sidebar():
+      selected = option_menu(None, ["Create Reminder", "View Reminders", "Chat", "Logout"], icons = ["📝", "📋", "💬", "🔓"] )
 
    if selected == "Create Reminder":
       create_rem()
