@@ -2,7 +2,12 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
-from auth import loadfile
+
+
+def loadfile():
+    with open("database/data.json") as file:
+        data = json.load(file)
+        return data
 
 def save_reminder(newrem):
    data =  loadfile()
