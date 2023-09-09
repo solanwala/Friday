@@ -3,6 +3,15 @@ import json
 import pandas as pd
 from streamlit_option_menu import option_menu
 from home import dashboard
+from pymongo.mongo_client import MongoClient
+
+uri = st.secrets["MONGO_CONNECTION_STRING"]
+
+client = MongoClient(uri, ssl=False)
+
+db = client["myapp"]
+
+col = db["users"]
 
 if "users" not in st.session_state:
     st.session_state["users"] = "Guest"
@@ -31,6 +40,7 @@ def Signup():
     if st.button("Signup"):
             if password == confpass:
                 savefile(newuser)
+                col.insert_one(newuser)
                 st.write("You are Registered Sucessfully")
             else:
                 "Password do not match"
