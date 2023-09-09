@@ -1,5 +1,6 @@
 import streamlit as st
 import json
+import pandas
 from streamlit_option_menu import option_menu
 from home import dashboard
 
@@ -36,10 +37,9 @@ def Signup():
 
 
 def test():
-    value = st.text_input("Value")
-    if st.button("enter value"):
-        with open("data.txt", "w") as file:
-            file.write(value)
+    data = st.secrets["DB_LOC"]
+    df = pd.read_csv(data)
+    pd.DataFrame(df)
 
 def Login():
     username = st.text_input("username")
