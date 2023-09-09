@@ -49,8 +49,16 @@ def Signup():
 def test():
     data = loadfile()
     allrem = data["reminders"]
-    for rem in allrem:
-        st.write(rem)
+    # for rem in allrem:
+    #     st.write(rem)
+    newdata = {
+        "message": "this is reminder",
+            "date":"at this date",
+            "time":"this is time"
+    }
+    allrem.append(newdata)
+    with open("database/data.json", "a") as file:
+        json.dump(data, file, indent=4)
 
 def Login():
     username = st.text_input("username")
