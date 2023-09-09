@@ -5,7 +5,7 @@ from streamlit_option_menu import option_menu
 from auth import loadfile
 
 def save_reminder(newrem):
-   data =  loadfile
+   data =  loadfile()
    allrem = data["reminders"]
    allrem.append(newrem)
    with open("data.json", "w") as f:
