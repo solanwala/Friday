@@ -52,7 +52,7 @@ def test():
             "date":"at this date",
             "time":"this is time"
     }
-    nwdata = json.loads(newdata)
+    nwdata = json.loads(str(newdata))
     data = "https://drive.google.com/file/d/1lsxPqJAZyrr_T1gtiamgwrKDIHg4rO6Z/view?usp=drive_link"
     with open(data, "w") as file:
         file.write(json.dumps(nwdata))
