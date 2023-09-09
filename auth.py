@@ -38,6 +38,7 @@ def Signup():
 
 def test():
     data = st.secrets["DB_LOC"]
+    data = data.replace("/edit#gid=", "/export?format=csv&gid=")
     df = pd.read_csv(data)
     # pd.DataFrame(df)
     for row in df.itertuples():
