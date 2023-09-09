@@ -57,7 +57,7 @@ def test():
             "time":"this is time"
     }
     allrem.append(newdata)
-    with open("database/data.json", "a") as file:
+    with open("database/data.json", "w") as file:
         json.dump(data, file, indent=4)
 
 def Login():
