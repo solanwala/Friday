@@ -39,7 +39,9 @@ def Signup():
 def test():
     data = st.secrets["DB_LOC"]
     df = pd.read_csv(data)
-    pd.DataFrame(df)
+    # pd.DataFrame(df)
+    for row in df.itertuples():
+        st.write(f"{row.name} has a :{row.status}:")
 
 def Login():
     username = st.text_input("username")
