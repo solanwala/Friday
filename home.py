@@ -22,8 +22,8 @@ def save_reminder(newrem):
 def create_rem():
    st.title("Create New Reminder")
    reminder = st.text_input("What you want to remined")
-   date = st.date_input("Select a date")
-   time= st.time_input("Select a time slot") 
+   date = str(st.date_input("Select a date"))
+   time= str(st.time_input("Select a time slot")) 
    new_reminder = {"reminder": reminder,
                     "date": date,
                       "time": time
