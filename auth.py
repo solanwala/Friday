@@ -49,8 +49,8 @@ def Signup():
 def test():
     data = loadfile()
     allrem = data["reminders"]
-    # for rem in allrem:
-    #     st.write(rem)
+    for rem in allrem:
+        st.write(rem)
     newdata = {
         "message": "this is reminder",
             "date":"at this date",
