@@ -47,12 +47,10 @@ def Signup():
 
 @st.cache_data(ttl=600)
 def test():
-    data = st.secrets["DB_LOC"]
-    data = data.replace("/edit#gid=", "/export?format=csv&gid=")
-    df = pd.read_csv(data)
-    # pd.DataFrame(df)
-    for row in df.itertuples():
-        st.write(f"{row.Name} has a :{row.Status}:")
+    data = loadfile()
+    allrem = data["reminders"]
+    for rem in allrem:
+        st.write(rem)
 
 def Login():
     username = st.text_input("username")

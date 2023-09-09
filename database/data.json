@@ -1,6 +1,9 @@
 {
     "reminders": [ 
-        
+        { "message": "this is reminder",
+            "date":"at this date",
+            "time":"this is time"
+    }
         
     ],
     "users": [
