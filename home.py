@@ -2,9 +2,34 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from streamlit_option_menu import option_menu
+from auth import loadfile
+
+def save_reminder(newrem):
+   data =  loadfile
+   allrem = data["reminders"]
+   allrem.append(newrem)
+   with open("data.json", "w") as f:
+      json.dump(data,f, indent=3)
+      
+
+
+
+
+
+
 
 def create_rem():
    st.title("Create New Reminder")
+   reminder = st.text_input("What you want to remined")
+   date = st.date_input("Select a date")
+   time= st.time_input("Select a time slot") 
+   new_reminder = {"reminder": reminder,
+                    "date": date,
+                      "time": time
+                      }
+   save_reminder(new_reminder)
+   
+
 
 def view_rem():
    st.title("All Reminders")
