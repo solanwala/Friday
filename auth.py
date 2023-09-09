@@ -37,8 +37,9 @@ def Signup():
 
 def test():
     value = st.text_input("Value")
-    with open("data.txt", "w") as file:
-        file.write(value)
+    if st.button("enter value"):
+        with open("data.txt", "w") as file:
+            file.write(value)
 
 def Login():
     username = st.text_input("username")
