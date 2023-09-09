@@ -14,7 +14,7 @@ def save_reminder(newrem):
    data =  loadfile()
    allrem = data["reminders"]
    allrem.append(newrem)
-   with open("data.json", "w") as f:
+   with open("database/data.json", "w") as f:
       json.dump(data,f, indent=3)
       
 
