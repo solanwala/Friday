@@ -16,7 +16,7 @@ def savefile(newuser):
     data = loadfile()
     usrdata = data['users']
     usrdata.append(newuser)
-    with open("database/data.json", "w") as f:
+    with open("database/data.json", "w") as f: 
         json.dump(data, f, indent=4)
 
 def Signup():
